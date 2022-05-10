@@ -1,6 +1,8 @@
-/* copy the code below and paste into the browser console. */
+/*  copy the code below and paste into the browser console. */
 /*  it will find all SVG elements on the page and download them */
-/* it will attempt to locate a name for the svg from the innerHTML of nearby elements. */
+/*  it will attempt to locate a name for the svg from the innerHTML of nearby elements. */
+/*  I found this to be useful on the following site: https://react-icons.github.io/react-icons */
+/*  Make sure you are not breaking any terms of service. */
 
 document.querySelectorAll('svg').forEach( svg => {   
   let svgData = svg.outerHTML;
