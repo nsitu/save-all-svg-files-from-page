@@ -18,13 +18,14 @@ document.querySelectorAll('svg').forEach( svg => {
   iconName = iconName.replace(/(<([^>]+)>)/gi, "") 
   /* use underscores instead of spaces*/
   iconName = iconName.replace(' ', '_') 
-  let svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
-  let svgUrl = URL.createObjectURL(svgBlob);
-  let downloadLink = document.createElement("a");
-  downloadLink.href = svgUrl;
-  downloadLink.download = iconName +".svg";
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  document.body.removeChild(downloadLink);
-
+  if (! iconName.includes('react-icons') ){
+   let svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
+   let svgUrl = URL.createObjectURL(svgBlob);
+   let downloadLink = document.createElement("a");
+   downloadLink.href = svgUrl;
+   downloadLink.download = iconName +".svg";
+   document.body.appendChild(downloadLink);
+   downloadLink.click();
+   document.body.removeChild(downloadLink);
+  }
 })
