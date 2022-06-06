@@ -6,12 +6,12 @@
 
 document.querySelectorAll('svg').forEach( svg => {   
   let svgData = svg.outerHTML;
-  let iconName = 'icon.svg'
+  let iconName = 'icon'
   if (svg.nextSibling != null){
-   iconName = svg.nextSibling.innerHTML
+   iconName = svg.nextSibling.innerHTML ?? iconName
   }
   else if (svg.parentElement.nextSibling != null){
-   iconName = svg.parentElement.nextSibling.innerHTML
+   iconName = svg.parentElement.nextSibling.innerHTML ?? iconName
   }
   /* strip all html tags from the file name.
   See also: https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/ */
